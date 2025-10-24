@@ -17,7 +17,10 @@
 
 .btn-primary {
     background-color: var(--color-accent);
-    color: var(--color-bg); /* 按钮前景使用深色，突出对比 */
+    /* 修复：硬编码为深色文本 (#1a1a2e)，以确保
+      在浅色模式下与 --color-accent 按钮背景形成高对比度。
+    */
+    color: #1a1a2e; 
     box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
 }
 
@@ -86,6 +89,11 @@
                 box-shadow 0.3s ease, 
                 background-color var(--transition-speed) var(--transition-curve);
     padding: var(--spacing-md);
+    
+    /* 修复：添加 Flexbox 布局 */
+    display: flex;          /* 将卡片本身变为 flex 容器 */
+    flex-direction: column; /* 确保内容垂直堆叠 */
+    height: 100%;           /* 确保卡片填满网格单元的高度 */
 }
 
 .card:hover {
@@ -114,8 +122,15 @@ body.light-mode .card:hover {
     color: var(--color-accent);
 }
 
+/* 修复：让描述文字自动伸缩 */
+.card p {
+    flex-grow: 1; /* 允许 <p> 标签伸展以填充可用空间 */
+}
+
 .card .btn-primary {
     display: inline-block;
+    /* 修复：移除 margin-top: auto; 
+       改为让 <p> 伸展，这更稳定 */
     margin-top: 1rem;
 }
 
@@ -197,3 +212,5 @@ body.light-mode .card:hover {
     width: 100%;
     font-size: 1.1rem;
 }
+
+

@@ -12,7 +12,7 @@ window.projectData = [
         "alt": "Dashboard web app preview",
         "linkText": "View Case Study",
         "linkUrl": "#",
-        "imgColor": "3a3a5e" // 自定义占位符背景色
+        "imageUrl": "assets/img/project1.jpg" // 更新：使用本地图片路径
     },
     {
         "title": "E-Commerce Redesign",
@@ -20,7 +20,7 @@ window.projectData = [
         "alt": "E-commerce storefront preview",
         "linkText": "Visit Site",
         "linkUrl": "#",
-        "imgColor": "4a4a6e"
+        "imageUrl": "assets/img/project2.jpg" // 更新：使用本地图片路径
     },
     {
         "title": "Portfolio Platform",
@@ -28,6 +28,7 @@ window.projectData = [
         "alt": "Portfolio website preview",
         "linkText": "Explore",
         "linkUrl": "#",
-        "imgColor": "2c2c4a"
+        "imageUrl": "assets/img/project3.jpg" // 更新：使用本地图片路径
     }
 ];
+
