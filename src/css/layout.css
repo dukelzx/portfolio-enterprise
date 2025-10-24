@@ -2,7 +2,7 @@
    LAYOUT.CSS - 结构和布局样式 (容器, Header, Section, Footer)
    ---------------------------------------------------- */
 
-/* --- 3. 布局工具 --- */
+/* --- 1. 布局工具 --- */
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -18,18 +18,23 @@
     text-align: center;
 }
 
-section {
+section,
+main {
     padding: var(--spacing-lg) 0;
+    /* 确保锚点链接定位正确，不会被 sticky header 遮挡 */
+    scroll-margin-top: 80px; 
 }
 
-/* --- 4. HEADER 导航栏布局 --- */
+/* --- 2. HEADER 导航栏布局 --- */
 header {
     background-color: var(--color-surface);
     padding: var(--spacing-sm) 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background-color var(--transition-speed) var(--transition-curve), 
+                box-shadow var(--transition-speed) var(--transition-curve);
 }
 
 header .container {
@@ -39,6 +44,9 @@ header .container {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
+}
+.logo-dot {
+    color: var(--color-accent);
 }
 
 header nav ul {
@@ -52,9 +60,16 @@ header nav a {
     font-weight: 500;
     padding: 0.5rem 0;
     position: relative;
+    transition: color 0.3s ease;
 }
 
-/* 导航下划线效果 (虽然是组件交互，但与导航布局紧密相关，放在这里) */
+/* 导航激活状态 (由 main.js 控制) */
+header nav a.active {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* 导航下划线效果 */
 header nav a::after {
     content: '';
     position: absolute;
@@ -65,17 +80,13 @@ header nav a::after {
     background-color: var(--color-accent);
     transition: width 0.3s ease;
 }
-
+header nav a.active::after,
 header nav a:hover::after {
     width: 100%;
 }
 
 
-/* --- 7. PROJECTS 区布局 --- */
-main {
-    padding-top: var(--spacing-lg);
-}
-
+/* --- 3. PROJECTS 区布局 --- */
 main h2, main p {
     text-align: center;
 }
@@ -87,31 +98,58 @@ main h2, main p {
 }
 
 .grid-3 {
+    /* 现代化网格布局：自动填充，最小宽度 300px */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* --- 9. FOOTER 布局 --- */
+/* --- 4. CONTACT 页面布局 --- */
+#contact-page {
+    padding-bottom: var(--spacing-lg);
+}
+
+#contact-page h2, #contact-page p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-links-container {
+    margin-top: var(--spacing-lg);
+}
+
+
+/* --- 5. FOOTER 布局 --- */
 footer {
     background-color: #11111a;
     padding: var(--spacing-md) 0;
     text-align: center;
     color: var(--color-text-secondary);
     font-size: 0.9rem;
+    transition: background-color var(--transition-speed) var(--transition-curve);
+}
+/* Light mode footer 调整 */
+body.light-mode footer {
+    background-color: #e0e0e0;
 }
 
 footer p {
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0;
 }
 
-/* --- 10. 响应式调整 (Mobile) --- */
+/* --- 6. 响应式调整 (Mobile) --- */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
+        gap: var(--spacing-sm);
     }
 
     header nav ul {
-        padding-top: var(--spacing-sm);
         gap: var(--spacing-sm);
+    }
+    
+    header .flex {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .grid-3 {
