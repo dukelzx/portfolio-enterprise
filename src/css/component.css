@@ -1,0 +1,137 @@
+/* ----------------------------------------------------
+   COMPONENTS.CSS - 可重用 UI 组件样式 (按钮, 卡片, 链接)
+   ---------------------------------------------------- */
+
+/* --- 5. 按钮样式 --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-bg); /* 按钮前景使用深色，突出对比 */
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-dark);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.6);
+    color: var(--color-bg);
+}
+
+/* --- 6. HERO 区样式 (Hero 视为一个大型组件) --- */
+.hero {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--color-text-primary);
+}
+
+.hero p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* --- 7. CARD 样式 --- */
+.card {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: var(--spacing-md);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: calc(var(--border-radius) / 2);
+    margin-bottom: var(--spacing-sm);
+}
+
+.card h3 {
+    color: var(--color-accent);
+}
+
+/* 确保卡片内的按钮靠左对齐 */
+.card .btn-primary {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* --- 8. CONTACT 区和 SOCIAL LINKS 样式 --- */
+#contact {
+    background-color: var(--color-surface);
+}
+
+#contact h2 {
+    color: var(--color-accent);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    /* 增加图标之间的间距，使其更“散开” */
+    gap: var(--spacing-lg); /* 从 --spacing-md (2rem) 增加到 --spacing-lg (4rem) */
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap; /* 允许在小屏幕上换行 */
+}
+
+.social-links a {
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+    width: 60px; /* 稍微增大图标尺寸 */
+    height: 60px; /* 稍微增大图标尺寸 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.8rem; /* 相应增大图标字体大小 */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* 增加 box-shadow 过渡 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.social-links a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    transform: translateY(-5px) scale(1.1); /* 悬停时向上移动更多，放大更多 */
+    box-shadow: 0 8px 25px rgba(0, 188, 212, 0.6); /* 悬停时阴影更明显 */
+}
+
+/* --- 10. 响应式调整 (Mobile) --- */
+@media (max-width: 768px) {
+    .card {
+        margin: 0 auto;
+    }
+    .social-links {
+        gap: var(--spacing-md); /* 移动端间距可以适当缩小 */
+    }
+    .social-links a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}

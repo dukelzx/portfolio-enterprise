@@ -1,0 +1,68 @@
+/* ----------------------------------------------------
+   BASE.CSS - 基础样式, 排版和 CSS 变量
+   ---------------------------------------------------- */
+
+/* --- 1. CSS 变量 (颜色主题和排版) --- */
+:root {
+    --font-family: 'Inter', sans-serif;
+    --color-bg: #1a1a2e; /* 深蓝/黑背景 */
+    --color-surface: #26273f; /* 浅一级的卡片背景 */
+    --color-text-primary: #f0f0f0; /* 亮色主文本 */
+    --color-text-secondary: #aaaaaa; /* 灰色辅助文本 */
+    --color-accent: #00bcd4; /* 强调色：青蓝色 */
+    --color-accent-dark: #0097a7; /* 强调色：深一点 */
+    --spacing-lg: 4rem;
+    --spacing-md: 2rem;
+    --spacing-sm: 1rem;
+    --border-radius: 0.75rem;
+    --max-width: 1200px;
+}
+
+/* --- 2. 基础和重置样式 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* 基础链接样式 */
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-text-primary);
+}
+
+/* 基础标题样式 */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+
+/* 基础段落样式 */
+p {
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* --- 响应式调整 (Mobile) --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+}

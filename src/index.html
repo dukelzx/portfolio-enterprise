@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ========== META 基础信息 ========== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional portfolio website showcasing web development, UX design, and front-end engineering projects."
+    />
+    <meta name="author" content="Your Name" />
+
+    <!-- Open Graph & SEO -->
+    <meta property="og:title" content="Your Name | Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore professional projects and contact for collaboration."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/preview.jpg" />
+
+    <title>Your Name | Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+
+    <!-- CSS 模块化导入 -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      xintegrity="sha512-SnH5qGf1A9B93F7/0+W1QdJ6X3eF6E1B/1E6H6H6X6H3I6H6E1Q6Q1A6D6E1A6E1E1F1A="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <!-- ========== HEADER 区 ========== -->
+    <header>
+      <div class="container flex">
+        <div class="logo">
+          Zhenxing Luo<span style="color: var(--color-accent)">.</span>
+        </div>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ========== HERO 区（首页展示） ========== -->
+    <section id="hero" class="hero center">
+      <div class="container">
+        <h1>Crafting Digital Experiences That Inspire</h1>
+        <p>
+          I'm a junior full stack developer specializing in building clean,
+          accessible, and high-performance web interfaces for businesses and
+          creative professionals.
+        </p>
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS 区 ========== -->
+    <main id="projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <p>
+          Explore selected works from web apps, responsive design systems, and
+          UI/UX prototypes.
+        </p>
+
+        <div class="grid grid-3">
+          <!-- Project 1 -->
+          <article class="card">
+            <img src="img/project1.jpg" alt="Dashboard web app preview" />
+            <h3>Enterprise Dashboard</h3>
+            <p>
+              A scalable admin dashboard built with React and Tailwind,
+              featuring data visualization and role-based access control.
+            </p>
+            <a href="#" class="btn btn-primary">View Case Study</a>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card">
+            <img src="img/project2.jpg" alt="E-commerce storefront preview" />
+            <h3>E-Commerce Redesign</h3>
+            <p>
+              Revamped online store with improved UX flow, mobile optimization,
+              and 30% higher conversion rate.
+            </p>
+            <a href="#" class="btn btn-primary">Visit Site</a>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card">
+            <img src="img/project3.jpg" alt="Portfolio website preview" />
+            <h3>Portfolio Platform</h3>
+            <p>
+              A dynamic portfolio system with Markdown-based content management
+              and instant page generation.
+            </p>
+            <a href="#" class="btn btn-primary">Explore</a>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <!-- ========== CONTACT 区 ========== -->
+    <section id="contact">
+      <div class="container center">
+        <h2>Let's Connect</h2>
+        <p>
+          I'm always open to collaboration, freelance work, or just a friendly
+          tech chat. You can find me here:
+        </p>
+
+        <div class="social-links">
+          <a href="mailto:dukeluozhx@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/zhenxing-luo-980091185/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/dukelzx"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+      <p>© <span id="year"></span> All rights reserved.</p>
+      <p>Built with ❤️ using HTML5, CSS3, and JavaScript.</p>
+    </footer>
+
+    <!-- Font Awesome 图标库 -->
+    <script
+      src="https://kit.fontawesome.com/6e58b4e5a1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS 模块 -->
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
